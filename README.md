@@ -191,7 +191,7 @@ Hit me up on Telegram [@lemnlabs](https://t.me/lemnlabs) if you have questions o
 ## Disclaimer
 
 This is experimental software. Use at your own risk. Trading involves real money and you can lose it. I'm not responsible for any losses. The bot worked for me for a while but YMMV.
-
+Motivated By https://www.quicknode.com/guides/defi/polymarket-copy-trading-bot
 ## License
 
 ISC
