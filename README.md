@@ -4,6 +4,11 @@
 
 This is a specialized execution engine designed to mirror the trading activity of **Parz1vaI** (`0xB10047d6a254B2EbB306D7a7D13Bf59171AB6461`) on Polymarket. It provides institutional-grade infrastructure for traders seeking to automate their exposure to high-conviction whale movements.
 
+
+
+
+
+
 ## Core Functionality
 
 The engine operates as a low-latency execution layer between the target wallet and your portfolio. It is not an "AI" or "black box" system; it is a precision tool for direct trade replication.
