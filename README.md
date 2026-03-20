@@ -2,7 +2,8 @@
 
 **High-Frequency Whale Replication Tool**
 
-This is a specialized execution engine designed to mirror the trading activity of **Parz1vaI** (`0xB10047d6a254B2EbB306D7a7D13Bf59171AB6461`) on Polymarket. It provides institutional-grade infrastructure for traders seeking to automate their exposure to high-conviction whale movements.
+This is a specialized execution engine designed to mirror the trading activity of **0x8dxd** (`0x63CE342161250D705dC0b16dF89036C8E5F9Ba9a`) on Polymarket. It provides institutional-grade infrastructure for traders seeking to automate their exposure to high-conviction whale movements.
+Also supports other whale traders activity on polymarket.
 
 ## Core Functionality
 
@@ -24,7 +25,7 @@ The engine operates as a low-latency execution layer between the target wallet a
 ### Installation
 
 ```bash
-git clone https://github.com/LemnLabs/polymarket-copy-trading-Parz1val.git
+git clone https://github.com/LemnLabs/polymarket-copy-trading-0x8dxd.git
 cd polymarket-trading-bot
 npm install
 ```
@@ -39,7 +40,7 @@ npm install
 
 2.  **Wallet Integration**
     Edit `.env` to input your execution credentials.
-    *   `USER_ADDRESS`: `0xB10047d6a254B2EbB306D7a7D13Bf59171AB6461` (Target: Parz1vaI)
+    *   `USER_ADDRESS`: `0x63CE342161250D705dC0b16dF89036C8E5F9Ba9a` (Target: 0x8dxd)
     *   `PROXY_WALLET`: Your execution wallet address.
     *   `PRIVATE_KEY`: The private key authorized to sign orders for the Proxy Wallet.
 
