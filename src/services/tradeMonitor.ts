@@ -1,32 +1,17 @@
 import { ENV } from '../config/env';
-import { UserActivityInterface, UserPositionInterface } from '../interfaces/User';
-import { getUserActivityModel, getUserPositionModel } from '../models/userHistory';
+import { UserActivityInterface } from '../interfaces/User';
+import { getUserActivityModel } from '../models/userHistory';
 import fetchData from '../utils/fetchData';
+import getTargetUsers from '../utils/targetUsers';
 
-const USER_ADDRESS = ENV.USER_ADDRESS;
 const TOO_OLD_TIMESTAMP = ENV.TOO_OLD_TIMESTAMP;
 const FETCH_INTERVAL = ENV.FETCH_INTERVAL;
 
-if (!USER_ADDRESS) {
-    throw new Error('USER_ADDRESS is not defined');
-    console.log('USER_ADDRESS is not defined');
-}
-
-const UserActivity = getUserActivityModel(USER_ADDRESS);
-const UserPosition = getUserPositionModel(USER_ADDRESS);
-
-let temp_trades: UserActivityInterface[] = [];
-
-const init = async () => {
-    const trades = await UserActivity.find().exec();
-    temp_trades = trades.map((trade) => trade as UserActivityInterface);
-    console.log('temp_trades', temp_trades);
-};
-
-const fetchTradeData = async () => {
+const fetchTradeDataForUser = async (userAddress: string) => {
     try {
+        const UserActivity = getUserActivityModel(userAddress);
         const activities_raw = await fetchData(
-            `https://data-api.polymarket.com/activities?user=${USER_ADDRESS}`
+            `https://data-api.polymarket.com/activities?user=${userAddress}`
         );
         if (!Array.isArray(activities_raw) || activities_raw.length === 0) return;
 
@@ -41,7 +26,7 @@ const fetchTradeData = async () => {
         for (const trade of newTrades) {
             await UserActivity.create({
                 ...trade,
-                proxyWallet: USER_ADDRESS,
+                proxyWallet: userAddress,
                 bot: false,
                 botExcutedTime: 0,
             });
@@ -53,9 +38,12 @@ const fetchTradeData = async () => {
 };
 
 const tradeMonitor = async () => {
-    await init();
+    const targetUsers = getTargetUsers();
+
     while (true) {
-        await fetchTradeData();
+        for (const userAddress of targetUsers) {
+            await fetchTradeDataForUser(userAddress);
+        }
         await new Promise((r) => setTimeout(r, FETCH_INTERVAL * 1000));
     }
 };

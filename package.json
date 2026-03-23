@@ -1,5 +1,5 @@
 {
-    "name": "polymarket_arbitrage_Anjun_copy",
+    "name": "polymarket_copytrading_bot",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {

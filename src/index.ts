@@ -5,8 +5,8 @@ import createClobClient from './utils/createClobClient';
 import tradeExecutor from './services/tradeExecutor';
 import tradeMonitor from './services/tradeMonitor';
 import BotConfig from './models/botConfig';
+import getTargetUsers from './utils/targetUsers';
 
-const USER_ADDRESS = ENV.USER_ADDRESS;
 const PROXY_WALLET = ENV.PROXY_WALLET;
 
 const getFullEnvFromProcess = () => ({
@@ -90,10 +90,8 @@ export const main = async () => {
         await checkVariable();
         startEnvChangeWatcher();
 
-        console.log(`Target User Wallet address is: ${USER_ADDRESS}`);
-        if (USER_ADDRESS.toLowerCase() !== '0x43372356634781eEA88d61BbDd7824cdcE958882'.toLowerCase()) {
-            console.warn('WARNING: You are NOT copying Anjun (0x43372356634781eEA88d61BbDd7824cdcE958882). This bot is optimized for Anjun.');
-        }
+        const targetUsers = getTargetUsers();
+        console.log(`Target user wallets (${targetUsers.length}): ${targetUsers.join(', ')}`);
         console.log(`My Wallet address is: ${PROXY_WALLET}`);
 
         const clobClient = await createClobClient();

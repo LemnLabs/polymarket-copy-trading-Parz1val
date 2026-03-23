@@ -4,8 +4,6 @@ import { getUserActivityModel } from '../models/userHistory';
 import { ENV } from '../config/env';
 
 const RETRY_LIMIT = ENV.RETRY_LIMIT;
-const USER_ADDRESS = ENV.USER_ADDRESS;
-const UserActivity = getUserActivityModel(USER_ADDRESS);
 
 const postOrder = async (
     clobClient: ClobClient,
@@ -14,8 +12,11 @@ const postOrder = async (
     user_position: UserPositionInterface | undefined,
     trade: UserActivityInterface,
     my_balance: number,
-    user_balance: number
+    user_balance: number,
+    userAddress: string
 ) => {
+    const UserActivity = getUserActivityModel(userAddress);
+
     if (condition === 'merge') {
         if (!my_position) {
             await UserActivity.updateOne({ _id: trade._id }, { bot: true });
