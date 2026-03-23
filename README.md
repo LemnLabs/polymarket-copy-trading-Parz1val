@@ -7,7 +7,7 @@ Then the question hits you.
 What if you stopped fighting them and started following them?  
 What if each time one of those wallets moved, your bot moved too, proportionally, quietly, before the market fully reacted?
 That's exactly what this bot does.
-First I just started my own arbitrage bot with my own logic but also got some stable profit $700-8800 for 7 days
+First I just started my own arbitrage bot with my own logic but also got some stable profit $700-880 for 7 days
 but after that, suddenly falling it. I lost my money. At that time there is something got me thinking. That is copy trading bot for polymarket whale traders.
 that's why I just made this copy trading bot....
 
