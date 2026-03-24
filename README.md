@@ -153,7 +153,7 @@ RPC_URL=https://polygon-rpc.com
 USDC_CONTRACT_ADDRESS=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
 
 # Runtime behavior
-MONGO_URI=mongodb://localhost:27017/polymarket_anjun
+MONGO_URI=mongodb://localhost:27017/polymarket_copytrading
 FETCH_INTERVAL=1
 TOO_OLD_TIMESTAMP=24
 RETRY_LIMIT=3
