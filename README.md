@@ -26,7 +26,7 @@ You scroll resolved markets and the same 30-40 wallets keep surfacing near the t
 Again. Again. Again.  
 They don't look lucky. They look *early*. Maybe informed. Maybe just faster.
 
-Either way, the gap is real — not cheating, just information asymmetry with better execution.
+Either way, the gap is real - not cheating, just information asymmetry with better execution.
 
 Then the question hits you.
 
