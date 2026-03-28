@@ -85,7 +85,7 @@ Every hour. Every night you don't feel like watching markets.
 
 The bot is the execution layer. **The alpha is in who you choose to mirror.**
 
-Works with any public Polymarket wallet — paste any address and it starts watching immediately. Follow one trader or twenty, comma-separated in a single config line.
+Works with any public Polymarket wallet - paste any address and it starts watching immediately. Follow one trader or twenty, comma-separated in a single config line.
 
 Some of the most-studied wallets right now:
 
